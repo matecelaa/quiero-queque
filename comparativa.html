@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativa - Siglo XX vs XXI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="nav-superior">
+        <a href="/" class="boton-volver">← Volver al Inicio</a>
+    </div>
+
+    <div class="main-container">
+        <div class="presentacion">
+            <h1 class="titulo-principal color-amarillo">Duelo de Siglos</h1>
+            <p class="descripcion">¿Cómo evolucionó el fútbol en las finales? Comparación directa de efectividad y disciplina.</p>
+        </div>
+
+        <!-- resumen rapido tarjetas -->
+        <div class="seccion-cards-resumen">
+            <div class="card-mini border-celeste">
+                <h4>Goles Totales</h4>
+                <p class="dato">{{ data.siglo20.goles_totales }} <span class="vs">vs</span> {{ data.siglo21.goles_totales }}</p>
+                <small>Siglo XX vs Siglo XXI</small>
+            </div>
+            <div class="card-mini border-amarillo">
+                <h4>Promedio de Goles</h4>
+                <p class="dato">{{ data.siglo20.promedio_goles }} <span class="vs">vs</span> {{ data.siglo21.promedio_goles }}</p>
+                <small>Por partido</small>
+            </div>
+        </div>
+
+        <div class="linea-divisoria"></div>
+
+        <!-- comparacion principal -->
+        <div class="seccion-grafico">
+            <h2 class="subtitulo">Acción en el Campo</h2>
+            <img src="{{ url_for('static', filename='grafico_comparativo.png') }}" alt="Gráfico Comparativo" class="imagen-analisis">
+            <p class="pie-grafico">Comparación de Goles y Tarjetas totales por cada periodo analizado.</p>
+        </div>
+
+        <div class="linea-divisoria"></div>
+
+        <!-- tipo de definicion -->
+        <div class="seccion-grafico">
+            <h2 class="subtitulo">¿Cómo terminan los partidos?</h2>
+            <img src="{{ url_for('static', filename='grafico_definiciones.png') }}" alt="Gráfico Definiciones" class="imagen-analisis">
+            <p class="pie-grafico">Frecuencia de definiciones en tiempo regular, extra o penales considerando ambos siglos.</p>
+        </div>
+    </div>
+
+</body>
+</html>

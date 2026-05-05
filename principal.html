@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Finales del Mundo</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="presentacion">
+            <h1 class="titulo-principal">Mundiales: Siglo XX vs XXI</h1>
+            <p class="descripcion">
+                Un análisis interactivo que compara las estadísticas de las finales de las Copas del Mundo. 
+                Explorá la evolución de los goles, las tarjetas y las formas de definición.
+            </p>
+        </div>
+
+        <div id="carruselMundiales" class="carousel slide my-4" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carruselMundiales" data-slide-to="0" class="active"></li>
+                <li data-target="#carruselMundiales" data-slide-to="1"></li>
+                <li data-target="#carruselMundiales" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F1218%2Fr1429402_1296x729_16%2D9.jpg" alt="Final 1" style="height: 400px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>La Mejor Final de la Historia</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://a3.espncdn.com/combiner/i?img=%2Fdeportes%2F2003%2Fphotos2017%2F0217%2FBaggio5.jpg" alt="Final 2" style="height: 400px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>El Hombre que Murió de Pie</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://www.vice.com/wp-content/uploads/sites/2/2018/06/1529941203349-zidane.jpeg" alt="Final 3" style="height: 400px; object-fit: cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>La Expulsion mas Insolita</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carruselMundiales" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carruselMundiales" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+
+        <div class="linea-divisoria"></div>
+
+        <!-- tarjetas -->
+        <div class="seccion-cards">
+            <div class="tarjeta-acceso border-celeste">
+                <div class="tarjeta-contenido">
+                    <h3 class="color-celeste">Siglo XX</h3>
+                    <p>Estadísticas de las finales entre 1978 y 1998.</p>
+                    <a href="/siglo20" class="boton-acceso btn-celeste">Ver Datos</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-acceso border-celeste">
+                <div class="tarjeta-contenido">
+                    <h3 class="color-celeste">Siglo XXI</h3>
+                    <p>Análisis de las finales modernas hasta Qatar 2022.</p>
+                    <a href="/siglo21" class="boton-acceso btn-celeste">Ver Datos</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-acceso border-amarillo">
+                <div class="tarjeta-contenido">
+                    <h3 class="color-amarillo">Comparativa</h3>
+                    <p>Duelo directo: ¿En qué siglo hubo más acción?</p>
+                    <a href="/comparativa" class="boton-acceso btn-amarillo">Ver Comparación</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

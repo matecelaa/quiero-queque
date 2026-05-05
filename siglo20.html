@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siglo XX - Análisis de Finales</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="nav-superior">
+        <a href="/" class="boton-volver">← Volver al Inicio</a>
+    </div>
+
+    <div class="main-container">
+        <div class="presentacion">
+            <h1 class="titulo-siglo">Finales del Siglo XX</h1>
+            <p class="descripcion">Análisis detallado de los mundiales entre 1978 y 1998.</p>
+        </div>
+
+        <!-- grafico -->
+        <div class="seccion-grafico">
+            <h2 class="subtitulo">Estadísticas Visuales</h2>
+            <img src="{{ url_for('static', filename='grafico_siglo20.png') }}" alt="Gráfico Siglo XX" class="imagen-analisis">
+        </div>
+
+        <div class="linea-divisoria"></div>
+
+        <div class="seccion-tabla">
+            <h2 class="subtitulo">Detalle de Partidos</h2>
+            <div class="contenedor-tabla">
+                <table class="tabla-personalizada">
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Final</th>
+                            <th>Resultado</th>
+                            <th>Disciplina</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Usamos Jinja para recorrer la lista 'detalle_20' desde app.py -->
+                        {% for partido in data.partidos %}
+                        <tr>
+                            <td>{{ partido.año }}</td>
+                            <td>{{ partido.equipos }}</td>
+                            <td>{{ partido.resultado }}</td>
+                            <td>{{ partido.disciplina }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

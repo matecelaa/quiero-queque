@@ -1,0 +1,1 @@
+#Permite que app.py vea a analisis.py (que está dentro de la carpeta data).
